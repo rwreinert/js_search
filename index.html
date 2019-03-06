@@ -29,7 +29,7 @@
 				</div>
 				
 				
-				<iframe class="container-fluid" src="https://www.bing.com" width=600 height = 400></iframe>
+				<iframe id="browser" class="container-fluid" src="https://www.bing.com" width=600 height = 400></iframe>
 			</div>
 
 
@@ -38,6 +38,16 @@
 		<footer>
 					
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script src="search.js"></script>			
+			<script>
+				//Create a searchBot object and run
+				var searchBot= new SearchBot("hello world", 5, 2);
+				searchBot.search();				
+			
+			
+			</script>
 		</footer>
 
 
