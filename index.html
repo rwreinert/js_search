@@ -15,23 +15,18 @@
 		<nav>
 		</nav>
 
-
 		<div class="container" width=150>
-
 			
 				<h1>Auto Search</h1>
 
-				<div class="card">
-					<input type="text" name="query" id="queryID" placeholder="Search Query"/>						
+				<div class="card">				
+					<input type="text" name="query" id="queryID" placeholder="Search Query" required/>						
 					<input type="number" name="interval" id="intervalID"  value ="2" maxlength="4" placeholder="Interval (Seconds)"size="4" required/>
 					<input type="number" name="searches" id="searchesID" placeholder="Number of Searches" value = "30" required/>
-					<button id="searchBTN">Search</button>
+					<button id="searchBTN">Search</button>				
 				</div>
-				
-				
 				<iframe id="browser" class="container-fluid" src="https://www.bing.com" width=600 height = 400></iframe>
 			</div>
-
 
 		</body>
 
@@ -42,9 +37,25 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="search.js"></script>			
 			<script>
-				//Create a searchBot object and run
-				var searchBot= new SearchBot("hello world", 5, 2);
-				searchBot.search();				
+			
+			$(document).ready(function(){
+				$("#searchBTN").click(function() {
+					var query = $("#queryID").val();
+					var number = $("#searchesID").val();
+					var interval = $("#intervalID").val();
+					if(query != "" && number != "" && interval != "") {
+						//Create a searchBot object and run
+						var searchBot= new SearchBot(query, number, interval);
+						searchBot.search();	
+					} else {
+						alert("Please fill out the required fields.");
+					}
+					
+				});
+			
+			});
+			
+				
 			
 			
 			</script>
